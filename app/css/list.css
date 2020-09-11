@@ -1,0 +1,43 @@
+/* List */
+.nav-list ul {
+    counter-reset: index;
+    padding: 0;
+    max-width: 300px;
+}
+
+/* List element */
+.nav-list li {
+    counter-increment: index;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+
+
+/* Element counter */
+.nav-list li::before {
+    font-family: 'Montserrat', sans-serif;
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1e1f26), to(#1e1f26));
+    background-image: linear-gradient(to bottom, #1e1f26, #1e1f26);
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Element separation */
+.nav-list li + li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
